@@ -14,5 +14,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+    - name: Build the Docker image and push to repo
       run: docker build . --file Dockerfile/Dockerfile --tag spacy:$(date +%s)
+      run: docker push mauromussin/spacy:$(date +%s)
